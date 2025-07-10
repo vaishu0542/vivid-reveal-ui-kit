@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
@@ -8,28 +7,28 @@ const products = [
     id: 1,
     name: 'Minimal Dining Chair',
     price: 299,
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     category: 'Chairs'
   },
   {
     id: 2,
     name: 'Modern Coffee Table',
     price: 599,
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     category: 'Tables'
   },
   {
     id: 3,
     name: 'Luxury Sofa Set',
     price: 1299,
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1555184343-2c0a2bb9a8cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     category: 'Sofas'
   },
   {
     id: 4,
     name: 'Designer Bookshelf',
     price: 899,
-    image: '/placeholder.svg',
+    image: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     category: 'Storage'
   }
 ];

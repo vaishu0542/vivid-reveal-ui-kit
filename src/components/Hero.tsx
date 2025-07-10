@@ -39,10 +39,10 @@ const Hero = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">Products</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
+            <a href="/" className="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+            <a href="/products" className="text-gray-700 hover:text-gray-900 transition-colors">Products</a>
+            <a href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+            <a href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -85,7 +85,7 @@ const Hero = () => {
         <div className="flex-1 relative min-h-[60vh] lg:min-h-screen">
           <div className="absolute inset-0 bg-gray-100">
             <img 
-              src="/placeholder.svg" 
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
               alt="Modern Chair"
               className="w-full h-full object-cover"
             />
