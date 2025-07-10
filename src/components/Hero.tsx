@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, ShoppingBag, Search, User, Menu } from 'lucide-react';
@@ -36,14 +35,14 @@ const Hero = () => {
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-40 p-4 md:p-6 lg:p-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-light text-gray-900">FURNITURE</Link>
+          <div className="text-2xl font-light text-gray-900">FURNITURE</div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-gray-900 transition-colors">Home</Link>
-            <Link to="/products" className="text-gray-700 hover:text-gray-900 transition-colors">Products</Link>
-            <Link to="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</Link>
-            <Link to="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</Link>
+            <a href="/" className="text-gray-700 hover:text-gray-900 transition-colors">Home</a>
+            <a href="/products" className="text-gray-700 hover:text-gray-900 transition-colors">Products</a>
+            <a href="/about" className="text-gray-700 hover:text-gray-900 transition-colors">About</a>
+            <a href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">Contact</a>
           </div>
 
           <div className="flex items-center space-x-4">
