@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
@@ -7,7 +8,7 @@ const products = [
     id: 1,
     name: 'Minimal Dining Chair',
     price: 299,
-    image: 'https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     category: 'Chairs'
   },
   {
@@ -44,12 +45,14 @@ const BestSellingProducts = () => {
     setCurrentIndex(newIndex);
     
     // Button animation
-    gsap.to(buttonLeftRef.current, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1
-    });
+    if (buttonLeftRef.current) {
+      gsap.to(buttonLeftRef.current, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1
+      });
+    }
   };
 
   const slideRight = () => {
@@ -57,12 +60,14 @@ const BestSellingProducts = () => {
     setCurrentIndex(newIndex);
     
     // Button animation
-    gsap.to(buttonRightRef.current, {
-      scale: 0.95,
-      duration: 0.1,
-      yoyo: true,
-      repeat: 1
-    });
+    if (buttonRightRef.current) {
+      gsap.to(buttonRightRef.current, {
+        scale: 0.95,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1
+      });
+    }
   };
 
   useEffect(() => {
@@ -74,6 +79,11 @@ const BestSellingProducts = () => {
       });
     }
   }, [currentIndex]);
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const img = e.target as HTMLImageElement;
+    img.src = 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+  };
 
   return (
     <section className="py-16 md:py-24 px-4 md:px-6 lg:px-12">
@@ -114,6 +124,7 @@ const BestSellingProducts = () => {
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={handleImageError}
                 />
                 <button className="absolute top-4 right-4 p-2 bg-white/80 hover:bg-white transition-colors opacity-0 group-hover:opacity-100">
                   <Heart className="w-4 h-4" />
@@ -142,6 +153,7 @@ const BestSellingProducts = () => {
                       src={product.image} 
                       alt={product.name}
                       className="w-full h-full object-cover"
+                      onError={handleImageError}
                     />
                   </div>
                   <div className="text-center">
