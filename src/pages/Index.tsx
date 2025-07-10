@@ -1,11 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Hero from '../components/Hero';
+import BestSellingProducts from '../components/BestSellingProducts';
+import FAQ from '../components/FAQ';
+import LoadingScreen from '../components/LoadingScreen';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Page reveal animation after loading
+    const tl = gsap.timeline({ delay: 2.5 });
+    tl.fromTo('.page-content', 
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
+    );
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div ref={pageRef} className="min-h-screen bg-white overflow-x-hidden">
+      <LoadingScreen />
+      <div className="page-content opacity-0">
+        <Hero />
+        <BestSellingProducts />
+        <FAQ />
       </div>
     </div>
   );
